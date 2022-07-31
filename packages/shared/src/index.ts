@@ -1,3 +1,4 @@
-export const isObject = () => {
-  console.log('isobject');
-};
+export const isObject = (val) => {
+  console.log('isobject')
+  return typeof val === 'object' && val !== null
+}

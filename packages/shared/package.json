@@ -5,7 +5,7 @@
   "main": "index.js",
   "buildOptions": {
     "formats": [
-      "ejs",
+      "cjs",
       "esm-bundler"
     ]
   }

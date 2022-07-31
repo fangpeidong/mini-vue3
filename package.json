@@ -4,14 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node scripts/dev.js reactivity -f global"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "vue": "^3.2.33"
-  },
+  "dependencies": {},
   "devDependencies": {
     "esbuild": "^0.14.38",
     "minimist": "^1.2.6",
