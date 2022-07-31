@@ -25,7 +25,28 @@ var VueReactivity = (() => {
   });
 
   // packages/reactivity/src/effect.ts
-  function effect() {
+  var activeEffect = void 0;
+  var ReactiveEffect = class {
+    constructor(fn) {
+      this.fn = fn;
+      this.active = true;
+    }
+    run() {
+      if (!this.active) {
+        this.fn();
+        return;
+      }
+      try {
+        activeEffect = this;
+        return this.fn();
+      } finally {
+        activeEffect = void 0;
+      }
+    }
+  };
+  function effect(fn) {
+    const _effect = new ReactiveEffect(fn);
+    _effect.run();
   }
 
   // packages/shared/src/index.ts
